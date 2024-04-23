@@ -25,6 +25,9 @@ RUN git clone https://github.com/xbobekf/WoWSimpleRegistration .
 RUN chown -R www-data:www-data /var/www/html \
     && a2enmod rewrite
 
+# Set the ServerName directive
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
 # Expose port 80 to the outside world
 EXPOSE 80
 
