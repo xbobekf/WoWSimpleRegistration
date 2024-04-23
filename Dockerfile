@@ -21,9 +21,6 @@ WORKDIR /var/www/html
 # Clone the repository into the container
 RUN git clone https://github.com/xbobekf/WoWSimpleRegistration .
 
-# Copy the configuration file
-COPY config.php config.php
-
 # Set permissions for Apache
 RUN chown -R www-data:www-data /var/www/html \
     && a2enmod rewrite
